@@ -1,0 +1,28 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Raul Herrador</title><description>Thoughts, stories and ideas of a Software Engineer student</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Thu, 17 Nov 2016 21:45:25 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Welcome!</title><description>&lt;p&gt;Hi there! It's RaulHC here and I want to introduce you to my brand-new blog :)&lt;/p&gt;
+
+&lt;h6 id="whatisthisabout"&gt;What is this about?&lt;/h6&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;'Get comfortable being uncomfortable'&lt;/em&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The previous quote resumes what this blog is all about. I'm not a person that feels really confortable showing the world some of my thoughts, work or&lt;/p&gt;</description><link>http://localhost:2368/welcome/</link><guid isPermaLink="false">480918fc-b53e-4422-a7a4-ddd5737ed5dd</guid><category>confort-zone</category><category>software-engineering</category><category>personal</category><dc:creator>Raul HC</dc:creator><pubDate>Thu, 17 Nov 2016 20:52:00 GMT</pubDate><media:content url="http://localhost:2368/content/images/2016/11/light-bulb.jpg" medium="image"/><content:encoded>&lt;img src="http://localhost:2368/content/images/2016/11/light-bulb.jpg" alt="Welcome!"&gt;&lt;p&gt;Hi there! It's RaulHC here and I want to introduce you to my brand-new blog :)&lt;/p&gt;
+
+&lt;h6 id="whatisthisabout"&gt;What is this about?&lt;/h6&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;'Get comfortable being uncomfortable'&lt;/em&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The previous quote resumes what this blog is all about. I'm not a person that feels really confortable showing the world some of my thoughts, work or ideas. It's a pet project that I will use to learn some new things getting out of my comfort zone. It's also a personal &lt;em&gt;repository&lt;/em&gt; where I would try to contribute to the internet with some of my knowledge.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It's a diary about things I have done related to programming mostly. &lt;/li&gt;
+&lt;li&gt;It's a blog where I will write about some things that catch my eye about anything.&lt;/li&gt;
+&lt;li&gt;It's a place where express myself and practice some english witting. &lt;/li&gt;
+&lt;li&gt;It's all of the above and more. &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So if you want to take a look and take advantage of anything write here, you are welcome!&lt;/p&gt;
+
+&lt;p&gt;PS: This is a gosh blog hosting on Github&lt;/p&gt;</content:encoded></item></channel></rss>
