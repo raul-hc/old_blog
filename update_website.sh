@@ -8,6 +8,5 @@ buster generate
 git add -A 							
 echo "Enter commit message: "
 read input_var
-date_var = date
 git commit -m "$input_var (`date`)" # Current date is added 
 git push origin master
