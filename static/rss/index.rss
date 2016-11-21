@@ -1,4 +1,35 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Raul Herrador</title><description>Thoughts, stories and ideas of a Software Engineer student</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sat, 19 Nov 2016 20:21:29 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Do not surround yourself with toxic people</title><description>&lt;p&gt;Everybody will have to deal with toxic people in a way or another, at university, at work maybe even with some relative. What this post is about is how i use to deal with these kind of people driven by envy, or just by their own boredom. &lt;/p&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Raul Herrador</title><description>Thoughts, stories and ideas of a Software Engineer student</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Mon, 21 Nov 2016 13:03:53 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Sorted arrays and branch predictors</title><description>&lt;p&gt;In this post I’ll talk about something every person that has taken classes of data structures will be familiar with. But these days that I’m trying to go deeper in some concepts I’m gonna write about this idea in one particular case: &lt;strong&gt;sorted arrays&lt;/strong&gt;. &lt;/p&gt;
+
+&lt;p&gt;The message I&lt;/p&gt;</description><link>http://localhost:2368/sorted-arrays-and-branch-predictors/</link><guid isPermaLink="false">45c854f1-e3c4-4c79-82a7-80dbff48a3b2</guid><category>algorithms</category><category>data-structures</category><category>sorting-array</category><category>branch-predictors</category><dc:creator>Raul HC</dc:creator><pubDate>Sun, 20 Nov 2016 22:25:36 GMT</pubDate><media:content url="http://localhost:2368/content/images/2016/11/algorithms.jpg" medium="image"/><content:encoded>&lt;img src="http://localhost:2368/content/images/2016/11/algorithms.jpg" alt="Sorted arrays and branch predictors"&gt;&lt;p&gt;In this post I’ll talk about something every person that has taken classes of data structures will be familiar with. But these days that I’m trying to go deeper in some concepts I’m gonna write about this idea in one particular case: &lt;strong&gt;sorted arrays&lt;/strong&gt;. &lt;/p&gt;
+
+&lt;p&gt;The message I got from some those lectures was essentially that something sorted is gonna be faster in most cases than another thing that is unsorted. Well this is certainly true for arrays; if you measure the time it takes to process a sorted array, and compare it with the processing time of an unsorted one, the results will show this idea. &lt;/p&gt;
+
+&lt;h4 id="whatsthemagicbehindthis"&gt;What’s the magic behind this?&lt;/h4&gt;
+
+&lt;p&gt;We need to go deep to understand why this happens, in fact we need to start thinking in how a processor executes basic instructions. When a processor see a branch (e.g. &lt;em&gt;if clause&lt;/em&gt;) it doesn’t know which way it will go. &lt;/p&gt;
+
+&lt;p&gt;The processor can halt execution and wait until the previous instructions are completed and then continue down the correct path … &lt;strong&gt;or&lt;/strong&gt; … the processor could guess which direction the branch will go.  If the guessing was right it continues executing instructions, other way the processor have to flush the pipeline, roll back to the branch and continue with the other branch. &lt;br&gt;
+This is a technology modern processors incorporate and is called &lt;strong&gt;&lt;em&gt;Branch Prediction&lt;/em&gt;&lt;/strong&gt;. This technology works by trying to predict which way a branch will go before this is known for sure. Branch predictors try to identify a pattern and follow it. &lt;br&gt;
+Most of the time modern branch predictors will guess right because applications use to have well-behaved branches, but when a predictors face unpredictable branches with no recognizable patterns (like in a random array). &lt;/p&gt;
+
+&lt;h5 id="realexample"&gt;Real example&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;if nums[index] &amp;lt;= 128:  
+    sum += nums[index]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To understand it with an example the code above shows the processing we are doing over an array. When the data is sorted roughly the first half of the iterations will enter the if-statement and immediately after that, they will all enter the if-statement (Suppose the data we generated goes from 0 up to 255). This is really friendly to the branch predictor because the branch consecutively goes the same direction a lot of times.&lt;/p&gt;
+
+&lt;p&gt;However, when the data in the array is completely random, the branch predictor is useless because it can't predict random data. This way it will guess right around 50% of the times which is no better than random guessing.&lt;/p&gt;
+
+&lt;p&gt;This is the code in the case someone wants to try by himself: &lt;a href="https://gist.github.com/raul-hc/a427b2f602a2c5cd46f4da0d803542ca"&gt;Sorted array&lt;/a&gt;&lt;/p&gt;
+
+&lt;h6 id="references"&gt;References:&lt;/h6&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://stackoverflow.com/questions/11227809/why-is-it-faster-to-process-a-sorted-array-than-an-unsorted-array?newsletter=1&amp;amp;nlcode=275343%7c112c"&gt;Why is it faster to process a sorted array than an unsorted array?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Branch_predictor"&gt;Branch predictor - Wikipedia&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title>Do not surround yourself with toxic people</title><description>&lt;p&gt;Everybody will have to deal with toxic people in a way or another, at university, at work maybe even with some relative. What this post is about is how i use to deal with these kind of people driven by envy, or just by their own boredom. &lt;/p&gt;
 
 &lt;h5 id="howcanyourecognizeatoxicperson"&gt;How can you&lt;/h5&gt;</description><link>http://localhost:2368/do-not-surround-yourself-with-toxic-people/</link><guid isPermaLink="false">350eab59-1057-4ad6-8d95-99d6633e0cbb</guid><category>personal</category><category>toxic-people</category><category>good-vibes-only</category><category>reflections</category><dc:creator>Raul HC</dc:creator><pubDate>Sat, 19 Nov 2016 19:54:46 GMT</pubDate><media:content url="http://localhost:2368/content/images/2016/11/logo-good-vibes.png" medium="image"/><content:encoded>&lt;img src="http://localhost:2368/content/images/2016/11/logo-good-vibes.png" alt="Do not surround yourself with toxic people"&gt;&lt;p&gt;Everybody will have to deal with toxic people in a way or another, at university, at work maybe even with some relative. What this post is about is how i use to deal with these kind of people driven by envy, or just by their own boredom. &lt;/p&gt;
 

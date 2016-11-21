@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Thoughts on my internship interview</title>
+    <title>Sorted arrays and branch predictors</title>
     <meta name="description" content="">
 
     <meta name="HandheldFriendly" content="True">
@@ -15,27 +15,28 @@
     
     <meta property="og:site_name" content="Raul Herrador">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Thoughts on my internship interview">
-    <meta property="og:description" content="This is my final year at university as Software Engineer Student and we need to complete at least 120 hours working in a company as a part of one of the 'subjects'. The process starts with a list of offering companies and every student enrolled in the course choose several">
-    <meta property="og:url" content="http://localhost:2368/thoughts-on-my-internship-interview/">
-    <meta property="og:image" content="http://localhost:2368/content/images/2016/11/job-interviewpng.png">
-    <meta property="article:published_time" content="2016-11-18T11:23:00.000Z">
-    <meta property="article:modified_time" content="2016-11-18T17:20:09.000Z">
-    <meta property="article:tag" content="interview">
-    <meta property="article:tag" content="internship">
-    <meta property="article:tag" content="experience">
+    <meta property="og:title" content="Sorted arrays and branch predictors">
+    <meta property="og:description" content="In this post I’ll talk about something every person that has taken classes of data structures will be familiar with. But these days that I’m trying to go deeper in some concepts I’m gonna write about this idea in one particular case: sorted arrays.  The message I">
+    <meta property="og:url" content="http://localhost:2368/sorted-arrays-and-branch-predictors/">
+    <meta property="og:image" content="http://localhost:2368/content/images/2016/11/algorithms.jpg">
+    <meta property="article:published_time" content="2016-11-20T22:25:36.000Z">
+    <meta property="article:modified_time" content="2016-11-20T22:28:03.000Z">
+    <meta property="article:tag" content="algorithms">
+    <meta property="article:tag" content="data-structures">
+    <meta property="article:tag" content="sorting-array">
+    <meta property="article:tag" content="branch-predictors">
     
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Thoughts on my internship interview">
-    <meta name="twitter:description" content="This is my final year at university as Software Engineer Student and we need to complete at least 120 hours working in a company as a part of one of the 'subjects'. The process starts with a list of offering companies and every student enrolled in the course choose several">
-    <meta name="twitter:url" content="http://localhost:2368/thoughts-on-my-internship-interview/">
-    <meta name="twitter:image" content="http://localhost:2368/content/images/2016/11/job-interviewpng.png">
+    <meta name="twitter:title" content="Sorted arrays and branch predictors">
+    <meta name="twitter:description" content="In this post I’ll talk about something every person that has taken classes of data structures will be familiar with. But these days that I’m trying to go deeper in some concepts I’m gonna write about this idea in one particular case: sorted arrays.  The message I">
+    <meta name="twitter:url" content="http://localhost:2368/sorted-arrays-and-branch-predictors/">
+    <meta name="twitter:image" content="http://localhost:2368/content/images/2016/11/algorithms.jpg">
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="Raul HC">
     <meta name="twitter:label2" content="Filed under">
-    <meta name="twitter:data2" content="interview, internship, experience">
-    <meta property="og:image:width" content="1000">
-    <meta property="og:image:height" content="1000">
+    <meta name="twitter:data2" content="algorithms, data-structures, sorting-array, branch-predictors">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="600">
     
     <script type="application/ld+json">
 {
@@ -59,18 +60,18 @@
         "sameAs": [],
         "description": "Last year software engineer student. Passionate about programming and technology. Fitness lover &lt;3"
     },
-    "headline": "Thoughts on my internship interview",
-    "url": "http://localhost:2368/thoughts-on-my-internship-interview/",
-    "datePublished": "2016-11-18T11:23:00.000Z",
-    "dateModified": "2016-11-18T17:20:09.000Z",
+    "headline": "Sorted arrays and branch predictors",
+    "url": "http://localhost:2368/sorted-arrays-and-branch-predictors/",
+    "datePublished": "2016-11-20T22:25:36.000Z",
+    "dateModified": "2016-11-20T22:28:03.000Z",
     "image": {
         "@type": "ImageObject",
-        "url": "http://localhost:2368/content/images/2016/11/job-interviewpng.png",
-        "width": 1000,
-        "height": 1000
+        "url": "http://localhost:2368/content/images/2016/11/algorithms.jpg",
+        "width": 1600,
+        "height": 600
     },
-    "keywords": "interview, internship, experience",
-    "description": "This is my final year at university as Software Engineer Student and we need to complete at least 120 hours working in a company as a part of one of the &#x27;subjects&#x27;. The process starts with a list of offering companies and every student enrolled in the course choose several",
+    "keywords": "algorithms, data-structures, sorting-array, branch-predictors",
+    "description": "In this post I’ll talk about something every person that has taken classes of data structures will be familiar with. But these days that I’m trying to go deeper in some concepts I’m gonna write about this idea in one particular case: sorted arrays.  The message I",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://localhost:2368"
@@ -863,34 +864,47 @@
         <article class="post">
 
             <header class="post-header">
-                <h1 class="post-title">Thoughts on my internship interview</h1>
+                <h1 class="post-title">Sorted arrays and branch predictors</h1>
                 <section class="post-meta">
                     <p class="author">by <a href="../../author/raulhc/">Raul HC</a></p>
-                    <time class="post-date" datetime="2016-11-18">2016-11-18</time>
+                    <time class="post-date" datetime="2016-11-20">2016-11-20</time>
                 </section>
             </header>
             <figure class="post-image">
-                <amp-img src="http://localhost:2368/content/images/2016/11/job-interviewpng.png" width="600" height="400" layout="responsive"></amp-img>
+                <amp-img src="http://localhost:2368/content/images/2016/11/algorithms.jpg" width="600" height="400" layout="responsive"></amp-img>
             </figure>
             <section class="post-content">
 
-                <p>This is my final year at university as Software Engineer Student and we need to complete at least 120 hours working in a company as a part of one of the <em>'subjects'</em>.</p>
+                <p>In this post I’ll talk about something every person that has taken classes of data structures will be familiar with. But these days that I’m trying to go deeper in some concepts I’m gonna write about this idea in one particular case: <strong>sorted arrays</strong>. </p>
 
-<p>The process starts with a list of offering companies and every student enrolled in the course choose several options in order of preference. Then the course staff start to sort by average grade mainly the students. The output of this process is a list of students who should contact the respective companies to start the process.</p>
+<p>The message I got from some those lectures was essentially that something sorted is gonna be faster in most cases than another thing that is unsorted. Well this is certainly true for arrays; if you measure the time it takes to process a sorted array, and compare it with the processing time of an unsorted one, the results will show this idea. </p>
 
-<p>Well, so my first company choice was <a href="http://csc.com">CSC</a>, a very large company  located in Avilés (also Barcelona, Madrid, etc). I contacted the human resources person who was responsible of the agreement with my <a href="http://www.uniovi.es/en/inicio">university</a> and sent her the english version of my resumé. After a couple of weeks I received a call asking me to go to their offices in Avilés next day. I accepted to be there at mid-morning to realize the internship interview. </p>
+<h4 id="whatsthemagicbehindthis">What’s the magic behind this?</h4>
 
-<h6 id="theinterview">The interview</h6>
+<p>We need to go deep to understand why this happens, in fact we need to start thinking in how a processor executes basic instructions. When a processor see a branch (e.g. <em>if clause</em>) it doesn’t know which way it will go. </p>
 
-<p>I arrived at their offices a little bit early because I try to follow the rule <em>'5 Minutes early is on time; on time is late; late is unacceptable.'</em> I had to sign a sort of contract to enter the building and keep in view the visitor's accreditation that I was given. </p>
+<p>The processor can halt execution and wait until the previous instructions are completed and then continue down the correct path … <strong>or</strong> … the processor could guess which direction the branch will go.  If the guessing was right it continues executing instructions, other way the processor have to flush the pipeline, roll back to the branch and continue with the other branch. <br>
+This is a technology modern processors incorporate and is called <strong><em>Branch Prediction</em></strong>. This technology works by trying to predict which way a branch will go before this is known for sure. Branch predictors try to identify a pattern and follow it. <br>
+Most of the time modern branch predictors will guess right because applications use to have well-behaved branches, but when a predictors face unpredictable branches with no recognizable patterns (like in a random array). </p>
 
-<p>After a few minutes two men, one from Spain and one foreigner, came and introduce themselves. They were part of the IT systems department of the company. All of us went to a meeting room where they started asking me some questions about my CV (they'd printed it and underline the parts they were more interested in). When we finished talking two of the DevOps engineers of the company and one of the development department entered the room and introduced themselves. They asked me kind of the same things that the other team and some questions about their respective job tasks, like if I was familiar with some of the concepts. We also talked about some of the technologies the company use in daily task and a little about how things work there. I explained them why I think university is a little obsolete and the disconnection that exists between the institution and the real-world companies. We also talked about some of my hobbies, what project I was working on for my final course between others.</p>
+<h5 id="realexample">Real example</h5>
 
-<p>I wouldn't like to finish without adding I felt really comfortable talking with all of these people, specially because they were actual workers of the company and I had the opportunity to ask them some technical questions related to the task I would be doing. In fact it was more like a relaxed conversation between engineers who like working on what they do. All of this process was realized in Spanish and English to test my conversational skills . I didn't wanted to fool anybody about my english level and I liked the idea to talk a little in the Shakespeare's language even though I'm not the best english speaker xD</p>
+<pre><code>if nums[index] &lt;= 128:  
+    sum += nums[index]
+</code></pre>
 
-<blockquote>
-  <p>UPDATE: Today I received a call from CSC's human resources department telling me I was one of the selected candidates. Hooray!</p>
-</blockquote>
+<p>To understand it with an example the code above shows the processing we are doing over an array. When the data is sorted roughly the first half of the iterations will enter the if-statement and immediately after that, they will all enter the if-statement (Suppose the data we generated goes from 0 up to 255). This is really friendly to the branch predictor because the branch consecutively goes the same direction a lot of times.</p>
+
+<p>However, when the data in the array is completely random, the branch predictor is useless because it can't predict random data. This way it will guess right around 50% of the times which is no better than random guessing.</p>
+
+<p>This is the code in the case someone wants to try by himself: <a href="https://gist.github.com/raul-hc/a427b2f602a2c5cd46f4da0d803542ca">Sorted array</a></p>
+
+<h6 id="references">References:</h6>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/11227809/why-is-it-faster-to-process-a-sorted-array-than-an-unsorted-array?newsletter=1&amp;nlcode=275343%7c112c">Why is it faster to process a sorted array than an unsorted array?</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Branch_predictor">Branch predictor - Wikipedia</a> </li>
+</ul>
 
             </section>
 

@@ -1,0 +1,251 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Sorted arrays and branch predictors</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=45be185380">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="Raul Herrador">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Sorted arrays and branch predictors">
+    <meta property="og:description" content="In this post I’ll talk about something every person that has taken classes of data structures will be familiar with. But these days that I’m trying to go deeper in some concepts I’m gonna write about this idea in one particular case: sorted arrays.  The message I">
+    <meta property="og:url" content="http://localhost:2368/sorted-arrays-and-branch-predictors/">
+    <meta property="og:image" content="http://localhost:2368/content/images/2016/11/algorithms.jpg">
+    <meta property="article:published_time" content="2016-11-20T22:25:36.000Z">
+    <meta property="article:modified_time" content="2016-11-20T22:28:03.000Z">
+    <meta property="article:tag" content="algorithms">
+    <meta property="article:tag" content="data-structures">
+    <meta property="article:tag" content="sorting-array">
+    <meta property="article:tag" content="branch-predictors">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sorted arrays and branch predictors">
+    <meta name="twitter:description" content="In this post I’ll talk about something every person that has taken classes of data structures will be familiar with. But these days that I’m trying to go deeper in some concepts I’m gonna write about this idea in one particular case: sorted arrays.  The message I">
+    <meta name="twitter:url" content="http://localhost:2368/sorted-arrays-and-branch-predictors/">
+    <meta name="twitter:image" content="http://localhost:2368/content/images/2016/11/algorithms.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Raul HC">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="algorithms, data-structures, sorting-array, branch-predictors">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="600">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Raul Herrador",
+        "logo": "http://localhost:2368/ghost/img/ghosticon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Raul HC",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/content/images/2016/11/raul.jpg",
+            "width": 1340,
+            "height": 1538
+        },
+        "url": "http://localhost:2368/author/raulhc/",
+        "sameAs": [],
+        "description": "Last year software engineer student. Passionate about programming and technology. Fitness lover &lt;3"
+    },
+    "headline": "Sorted arrays and branch predictors",
+    "url": "http://localhost:2368/sorted-arrays-and-branch-predictors/",
+    "datePublished": "2016-11-20T22:25:36.000Z",
+    "dateModified": "2016-11-20T22:28:03.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://localhost:2368/content/images/2016/11/algorithms.jpg",
+        "width": 1600,
+        "height": 600
+    },
+    "keywords": "algorithms, data-structures, sorting-array, branch-predictors",
+    "description": "In this post I’ll talk about something every person that has taken classes of data structures will be familiar with. But these days that I’m trying to go deeper in some concepts I’m gonna write about this idea in one particular case: sorted arrays.  The message I",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.11">
+    <link rel="alternate" type="application/rss+xml" title="Raul Herrador" href="../rss/index.html">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87739325-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body class="post-template tag-algorithms tag-data-structures tag-sorting-array tag-branch-predictors nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="index.html#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+            <li class="nav-home" role="presentation"><a href="../">Home</a></li>
+    </ul>
+        <a class="subscribe-button icon-feed" href="../rss/index.rss">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head " style="background-image: url(../content/images/2016/11/algorithms.jpg)">
+    <nav class="main-nav overlay clearfix">
+        
+            <a class="menu-button icon-menu" href="index.html#"><span class="word">Menu</span></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post tag-algorithms tag-data-structures tag-sorting-array tag-branch-predictors featured">
+
+        <header class="post-header">
+            <h1 class="post-title">Sorted arrays and branch predictors</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2016-11-20">20 November 2016</time>  on <a href="../tag/algorithms/">algorithms</a>, <a href="../tag/data-structures/">data-structures</a>, <a href="../tag/sorting-array/">sorting-array</a>, <a href="../tag/branch-predictors/">branch-predictors</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p>In this post I’ll talk about something every person that has taken classes of data structures will be familiar with. But these days that I’m trying to go deeper in some concepts I’m gonna write about this idea in one particular case: <strong>sorted arrays</strong>. </p>
+
+<p>The message I got from some those lectures was essentially that something sorted is gonna be faster in most cases than another thing that is unsorted. Well this is certainly true for arrays; if you measure the time it takes to process a sorted array, and compare it with the processing time of an unsorted one, the results will show this idea. </p>
+
+<h4 id="whatsthemagicbehindthis">What’s the magic behind this?</h4>
+
+<p>We need to go deep to understand why this happens, in fact we need to start thinking in how a processor executes basic instructions. When a processor see a branch (e.g. <em>if clause</em>) it doesn’t know which way it will go. </p>
+
+<p>The processor can halt execution and wait until the previous instructions are completed and then continue down the correct path … <strong>or</strong> … the processor could guess which direction the branch will go.  If the guessing was right it continues executing instructions, other way the processor have to flush the pipeline, roll back to the branch and continue with the other branch. <br>
+This is a technology modern processors incorporate and is called <strong><em>Branch Prediction</em></strong>. This technology works by trying to predict which way a branch will go before this is known for sure. Branch predictors try to identify a pattern and follow it. <br>
+Most of the time modern branch predictors will guess right because applications use to have well-behaved branches, but when a predictors face unpredictable branches with no recognizable patterns (like in a random array). </p>
+
+<h5 id="realexample">Real example</h5>
+
+<pre><code>if nums[index] &lt;= 128:  
+    sum += nums[index]
+</code></pre>
+
+<p>To understand it with an example the code above shows the processing we are doing over an array. When the data is sorted roughly the first half of the iterations will enter the if-statement and immediately after that, they will all enter the if-statement (Suppose the data we generated goes from 0 up to 255). This is really friendly to the branch predictor because the branch consecutively goes the same direction a lot of times.</p>
+
+<p>However, when the data in the array is completely random, the branch predictor is useless because it can't predict random data. This way it will guess right around 50% of the times which is no better than random guessing.</p>
+
+<p>This is the code in the case someone wants to try by himself: <a href="https://gist.github.com/raul-hc/a427b2f602a2c5cd46f4da0d803542ca">Sorted array</a></p>
+
+<h6 id="references">References:</h6>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/11227809/why-is-it-faster-to-process-a-sorted-array-than-an-unsorted-array?newsletter=1&amp;nlcode=275343%7c112c">Why is it faster to process a sorted array than an unsorted array?</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Branch_predictor">Branch predictor - Wikipedia</a> </li>
+</ul>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="../author/raulhc/" style="background-image: url(../content/images/2016/11/raul.jpg)"><span class="hidden">Raul HC's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="../author/raulhc/">Raul HC</a></h4>
+
+                    <p>Last year software engineer student. Passionate about programming and technology. Fitness lover &lt;3</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Spain</span>
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Sorted%20arrays%20and%20branch%20predictors&amp;url=http://localhost:2368/sorted-arrays-and-branch-predictors/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/sorted-arrays-and-branch-predictors/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/sorted-arrays-and-branch-predictors/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+            
+            
+            <div id="disqus_thread"></div>
+                <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        s.src = '//raul-hc.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        </footer>
+
+    </article>
+</main>                         
+
+<aside class="read-next">
+    <a class="read-next-story prev " style="background-image: url(../content/images/2016/11/logo-good-vibes.png)" href="../do-not-surround-yourself-with-toxic-people/">
+        <section class="post">
+            <h2>Do not surround yourself with toxic people</h2>
+            <p>Everybody will have to deal with toxic people in a way or another, at university, at work maybe even…</p>
+        </section>
+    </a>
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="../">Raul Herrador</a> © 2016</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=45be185380"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=45be185380"></script>
+
+</body>
