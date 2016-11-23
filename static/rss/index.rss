@@ -1,4 +1,127 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Raul Herrador</title><description>Thoughts, stories and ideas of a Software Engineer student</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Wed, 23 Nov 2016 13:10:22 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Sorted arrays and branch predictors</title><description>&lt;p&gt;In this post I’ll talk about something every person that has taken classes of data structures will be familiar with. But these days that I’m trying to go deeper in some concepts I’m gonna write about this idea in one particular case: &lt;strong&gt;sorted arrays&lt;/strong&gt;. &lt;/p&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Raul Herrador</title><description>Thoughts, stories and ideas of a Software Engineer student</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Wed, 23 Nov 2016 21:27:39 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Some useful search operators</title><description>&lt;p&gt;I'm going to write some of the operators I use in combination with Google search engine to make by searchers more precise.&lt;/p&gt;
+
+&lt;h6 id="_site_getresultsfromcertainsitesordomains"&gt;&lt;strong&gt;&lt;em&gt;site:&lt;/em&gt;&lt;/strong&gt; Get results from certain sites or domains.&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code&gt;- olympics site:nbc.com
+- olympics site:.gov
+- admissions site:www.lse.ac.uk  -&amp;gt;  admissions information&lt;/code&gt;&lt;/pre&gt;</description><link>http://localhost:2368/some-useful-search-operators/</link><guid isPermaLink="false">2fd6d7ab-33c6-405e-9a21-6a7e037c90fa</guid><dc:creator>Raul HC</dc:creator><pubDate>Wed, 23 Nov 2016 21:27:16 GMT</pubDate><content:encoded>&lt;p&gt;I'm going to write some of the operators I use in combination with Google search engine to make by searchers more precise.&lt;/p&gt;
+
+&lt;h6 id="_site_getresultsfromcertainsitesordomains"&gt;&lt;strong&gt;&lt;em&gt;site:&lt;/em&gt;&lt;/strong&gt; Get results from certain sites or domains.&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code&gt;- olympics site:nbc.com
+- olympics site:.gov
+- admissions site:www.lse.ac.uk  -&amp;gt;  admissions information from London School of Economics’ site
+- peace site:gov -&amp;gt; pages about peace within the .gov domain. 
+windows security –site:microsoft.com -&amp;gt; information on Windows security from all sites except microsoft.com
+
+** You can specify a domain with or without a period, e.g., either as .gov or gov.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id="_related_findsitesthataresimilartoawebaddressyoualreadyknow"&gt;&lt;strong&gt;&lt;em&gt;related:&lt;/em&gt;&lt;/strong&gt;    Find sites that are similar to a web address you already know.&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code&gt;- related:time.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id="_or_findpagesthatmightuseoneofseveralwords"&gt;&lt;strong&gt;&lt;em&gt;OR&lt;/em&gt;&lt;/strong&gt;   -      Find pages that might use one of several words.&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code&gt;- marathon OR race
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id="_info_getinformationaboutawebaddressincludingthecachedversionofthepagesimilarpagesandpagesthatlinktothesite"&gt;&lt;strong&gt;&lt;em&gt;info:&lt;/em&gt;&lt;/strong&gt;    Get information about a web address, including the cached version of the page, similar pages, and pages that link to the site.&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code&gt;- info:google.com
+- info:gothotel.com -&amp;gt; information about the national hotel directory GotHotel.com home page.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id="_cache_seewhatapagelookslikethelasttimegooglevisitedthesite"&gt;&lt;strong&gt;&lt;em&gt;cache:&lt;/em&gt;&lt;/strong&gt;        see what a page looks like the last time Google visited the site.&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code&gt;- cache:washington.edu
+- cache:www.eff.org -&amp;gt; will show Google’s cached version of the Electronic Frontier Foundation home page.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr&gt;
+
+&lt;h6 id="_define_showsdefinitionsfrompagesonthewebforthetermthatfollowsthisadvancedsearchoperatorisusefulforfindingdefinitionsofwordsphrasesandacronymsforexample"&gt;&lt;strong&gt;&lt;em&gt;define:&lt;/em&gt;&lt;/strong&gt; shows definitions from pages on the web for the term that follows. This advanced search operator is useful for finding definitions of words, phrases, and acronyms. For example,&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code&gt;- define: blog -&amp;gt; will show definitions for “Blog” (weB LOG).
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id="_filetype_restricttheresultstopageswhosenamesendinsuffix"&gt;&lt;strong&gt;&lt;em&gt;filetype:&lt;/em&gt;&lt;/strong&gt; restrict the results to pages whose names end in suffix.&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code&gt;- web page evaluation checklist filetype:pdf -&amp;gt; will return Adobe Acrobat pdf files that match the terms "web", "page", "evaluation" and "checklist" 
+
+** You can restrict the results to pages whose names end with pdf and doc by using the OR operator, e.g. [  email security filetype:pdf OR filetype:doc ].
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id="_link_pagesthatpointtothaturl"&gt;&lt;strong&gt;&lt;em&gt;link:&lt;/em&gt;&lt;/strong&gt;    pages that point to that URL.&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code&gt;- link:www.googleguide.com -&amp;gt; pages that point to Google Guide’s home page
+- link:www.google.com -site:google.com  -&amp;gt; links to the Google home page not on Google’s own site.
+- link:www.www.ownersdirect.co.uk -site:ownersdirect.co.uk -&amp;gt; links to the UK Owners Direct home page not on its own site.
+
+basic search operators +, –, OR, and " ".
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id="_inanchor_restricttheresultstopagescontainingthequerytermsyouspecifyintheanchortextorlinkstothepage"&gt;&lt;strong&gt;&lt;em&gt;inanchor:&lt;/em&gt;&lt;/strong&gt;  restrict the results to pages containing the query terms you specify in the anchor text or links to the page.&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code&gt;- restaurants inanchor:gourmet -&amp;gt; will return pages in which the anchor text on links to the pages contain the word “gourmet” and the page contains the word “restaurants.”
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id="_allinanchor_restrictsresultstopagescontainingallquerytermsyouspecifyintheanchortextonlinkstothepage"&gt;&lt;em&gt;* _allinanchor:_&lt;/em&gt;* restricts results to pages containing all query terms you specify in the anchor text on links to the page.&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code&gt;- allinanchor:best museums sydney -&amp;gt; will return only pages in which the anchor text on links to the pages contain the words “best,” “museums,” and “sydney”
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id="_intext_restrictsresultstodocumentscontainingterminthetext"&gt;&lt;strong&gt;&lt;em&gt;intext:&lt;/em&gt;&lt;/strong&gt;  restricts results to documents containing term in the text.&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code&gt;- Hamish Reid intext:pandemonia -&amp;gt; will return documents that mention the word “pandemonia” in the text, and mention the names “Hamish” and “Reid” anywhere in the document (text or not).
+
+** Putting intext: in front of every word in your query is equivalent to putting allintext: at the front of your query, e.g., *intext:handsome intext:poets* is the same as *allintext: handsome poets*
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id="_intitle_restrictsresultstodocumentscontainingterminthetitle"&gt;&lt;strong&gt;&lt;em&gt;intitle:&lt;/em&gt;&lt;/strong&gt;  restricts results to documents containing term in the title.&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code&gt;- flu shot intitle:help -&amp;gt; will return documents that mention the word “help” in their titles, and mention the words “flu” and “shot” anywhere in the document (title or not).  
+
+** Putting intitle: in front of every word in your query is equivalent to putting allintitle: at the front of your query, e.g., *intitle:google intitle:search* is the same as *allintitle: google search*
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id="_inurl_restricttheresultstodocumentscontainingthatwordintheurl"&gt;&lt;strong&gt;&lt;em&gt;inurl:&lt;/em&gt;&lt;/strong&gt; restrict the results to documents containing that word in the URL.&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code&gt;- inurl:print site:www.googleguide.com -&amp;gt; searches for pages on Google Guide in which the URL contains the word “print.” It finds pdf files that are in the directory or folder named “print” on the Google Guide website. 
+- inurl:healthy eating -&amp;gt; will return documents that mention the words “healthy” in their URL, and mention the word “eating” anywhere in the document.
+
+** Putting inurl: in front of every word in your query is equivalent to putting allinurl: at the front of your query, e.g., *inurl:healthy inurl:eating* is the same as *allinurl: healthy eating*
+In URLs, words are often run together. They need not be run together when you’re using inurl:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr&gt;
+
+&lt;h5 id="symbols"&gt;&lt;strong&gt;Symbols:&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;p&gt;&lt;strong&gt;-&lt;/strong&gt;
+When you use a dash before a word or site, it excludes sites with that info from your results. This is useful for words with multiple meanings, like Jaguar the car brand and jaguar the animal. &lt;br&gt;
+&lt;em&gt;jaguar speed -car&lt;/em&gt;
+&lt;em&gt;pandas -site:wikipedia.org&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;“&lt;/strong&gt; 
+When you put a word or phrase in quotes, the results will only include pages with the same words in the same order as the ones inside the quotes. Only use this if you're looking for an exact word or phrase, otherwise you'll exclude many helpful results by mistake. &lt;br&gt;
+&lt;em&gt;“imagine all the people”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;*&lt;/strong&gt; &lt;br&gt;
+Add an asterisk as a placeholder for any unknown or wildcard terms. &lt;br&gt;
+&lt;em&gt;”a * saved is a * earned”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;..&lt;/strong&gt;
+Separate numbers by two periods without spaces to see results that contain numbers in a range. &lt;br&gt;
+&lt;em&gt;hard drive \$50..$75&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://support.google.com/websearch/answer/2466433?hl=en"&gt;Search operators - Search Help&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.googleguide.com/advanced_operators_reference.html"&gt;Google Search Operators - Google Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title>Sorted arrays and branch predictors</title><description>&lt;p&gt;In this post I’ll talk about something every person that has taken classes of data structures will be familiar with. But these days that I’m trying to go deeper in some concepts I’m gonna write about this idea in one particular case: &lt;strong&gt;sorted arrays&lt;/strong&gt;. &lt;/p&gt;
 
 &lt;p&gt;The message I&lt;/p&gt;</description><link>http://localhost:2368/sorted-arrays-and-branch-predictors/</link><guid isPermaLink="false">45c854f1-e3c4-4c79-82a7-80dbff48a3b2</guid><category>algorithms</category><category>data-structures</category><category>sorting-array</category><category>branch-predictors</category><dc:creator>Raul HC</dc:creator><pubDate>Sun, 20 Nov 2016 22:25:36 GMT</pubDate><media:content url="http://localhost:2368/content/images/2016/11/algorithms.jpg" medium="image"/><content:encoded>&lt;img src="http://localhost:2368/content/images/2016/11/algorithms.jpg" alt="Sorted arrays and branch predictors"&gt;&lt;p&gt;In this post I’ll talk about something every person that has taken classes of data structures will be familiar with. But these days that I’m trying to go deeper in some concepts I’m gonna write about this idea in one particular case: &lt;strong&gt;sorted arrays&lt;/strong&gt;. &lt;/p&gt;
 
